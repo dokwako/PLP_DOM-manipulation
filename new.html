@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .message {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <p class="message">Hello, World!</p>
+    </div>
+    <button id="changeTextBtn">Change Text</button>
+    <button id="addElementBtn">Add Element</button>
+
+    <script>
+        // Selecting elements
+        const contentDiv = document.getElementById('content');
+        const changeTextBtn = document.getElementById('changeTextBtn');
+        const addElementBtn = document.getElementById('addElementBtn');
+
+        // Changing text content
+        changeTextBtn.addEventListener('click', () => {
+            const messageP = document.querySelector('.message');
+            messageP.textContent = 'Text has been changed!';
+        });
+
+        // Adding a new element
+        addElementBtn.addEventListener('click', () => {
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = 'This is a new paragraph!';
+            contentDiv.appendChild(newParagraph);
+        });
+    </script>
+</body>
+</html>
+
+
